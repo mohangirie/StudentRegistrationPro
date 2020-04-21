@@ -1,0 +1,63 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="{% static "css/studentreg.css" %}">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <form method="post">
+                <h3 class="text-success">Student Registration Form</h3>
+                {% csrf_token %}
+                <label>Roll Number:</label>
+                <input type="number" name="roll" autocomplete="off" placeholder="Enter Your Roll Number"><br>
+
+                <label>Name:</label>
+                <input type="text" name="sname" autocomplete="off" placeholder="Enter Your name"><br>
+
+                <label>Mobile Number:</label>
+                <input type="number" name="mobile" autocomplete="off" placeholder="Enter Your Mobile Number"><br>
+
+                <label>Fee Amount:</label>
+                <input type="number" name="fee" autocomplete="off" value="2000"readonly><br>
+
+                <label>Email:</label>
+                <input type="email" name="email" autocomplete="off" placeholder="Enter Your Email"><br>
+
+                <label>Date of Birth:</label>
+                <input type="date" name="dob"><br>
+
+                <label>Gender:</label>
+                <input type="radio" name="gender" value="male">male<br>
+                <input type="radio" name="gender" value="female">frmale<br>
+
+                <label>Course:</label>
+                <input type="checkbox" name="course" value="Python">Python<br>
+                <input type="checkbox" name="course" value="Django">Django<br>
+                <input type="checkbox" name="course" value="UI">UI<br>
+                <input type="checkbox" name="course" value="Java">Java<br>
+
+                <label>Institute:</label>
+                <select name="institute">
+                    <option value="DurgaSoft">DurgaSoft</option>
+                    <option value="Naresh IT">Naresh IT</option>
+                    <option value="Satya">Satya</option>
+                    <option value="Lokesh IT">Lokesh It</option>
+                </select><br>
+
+                <label>Address:</label>
+                <input type="text" name="address" autocomplete="off" placeholder="Enter Your Address"><br>
+
+                <input type="submit" value="submit" class="btn-btn-success">
+                <input type="reset" value="clear" class="btn-btn-danger">
+
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
